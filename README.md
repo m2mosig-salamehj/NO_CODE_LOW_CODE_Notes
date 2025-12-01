@@ -2,11 +2,11 @@
 
 ## 1. ScribesGit Workflow – Substitution Placeholders Sheet
 
-#### GROUP_REPO_URL = 
+#### GROUP_REPO_URL
 ```bash 
 https://github.com/m2mosig/m2mosig-2526-cwc-G11.git
 ```   
-#### ROOT_REPO_URL  = 
+#### ROOT_REPO_URL 
 ```bash
 https://github.com/m2mosig/m2mosig-2526-cwc-root.git
 ```
@@ -29,7 +29,7 @@ https://github.com/m2mosig/m2mosig-2526-cwc-root.git
 #### Editing & Committing      
 * FILE_NAME  = 
 
-* COMMIT_MSG = 
+* COMMIT_MSG
 ```bash
 git commit -m "msg" 
 ```
