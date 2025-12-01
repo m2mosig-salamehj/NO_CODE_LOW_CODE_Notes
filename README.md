@@ -27,7 +27,7 @@ https://github.com/m2mosig/m2mosig-2526-cwc-root.git
 
 
 #### Editing & Committing      
-* FILE_NAME      = 
+* FILE_NAME  = 
 
 * COMMIT_MSG = 
 ```bash
@@ -35,4 +35,4 @@ git commit -m "msg"
 ```
 
 #### Collaboration             
-TEAMMATE_NAME  = m2mosig-ghandoah   
+TEAMMATE_NAME  = `m2mosig-ghandoah` 
