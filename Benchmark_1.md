@@ -97,7 +97,7 @@ This confirms that Lovable is capable of modeling a **reflexive relationship** (
 
 ### 6\. Observed Limitations of Sub-Issues
 
-While sub-issues can be created and are displayed under their parent issue, several important limitations were observed:
+While sub-issues can be created and are displayed under their parent issue the following limitations were observed empirically during interaction with the generated UI:
 
 ![screenshot showing the sub-issue under the parent issue](images/img8.png)
 
