@@ -19,8 +19,7 @@ Lovable was given the benchmark prompt without any additional clarification or c
 
 After a short generation phase, Lovable produced a fully functional **issue tracking application** with a modern, Linear-inspired dark UI. The generated application includes sidebar navigation, multiple views, and interactive modals.
 
-📸 **Image 1 --- Global Issues View**\
-_(Insert screenshot showing the "All Issues" page with multiple issues)_
+![Global issues view showing multiple issues with status, priority, and assignees](images/img1.png)
 
 At this stage, Lovable already supports:
 
