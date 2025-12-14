@@ -89,7 +89,6 @@ After this interaction, Lovable modifies the application by introducing a **Sub-
 
 Lovable now allows the creation of a sub-issue linked to a parent issue.
 
-📸 **Image 5 --- Create Sub-Issue Modal**\
 !["Create Sub-issue" dialog](images/img7.png)
 
 This confirms that Lovable is capable of modeling a **reflexive relationship** (Issue → Issue), at least at a minimal level.
@@ -100,7 +99,6 @@ This confirms that Lovable is capable of modeling a **reflexive relationship** (
 
 While sub-issues can be created and are displayed under their parent issue, several important limitations were observed:
 
-📸 **Image 6 --- Sub-Issue Listed Under Parent Issue**\
 ![screenshot showing the sub-issue under the parent issue](images/img8.png)
 
 - Sub-issues cannot be clicked to open a detailed view
