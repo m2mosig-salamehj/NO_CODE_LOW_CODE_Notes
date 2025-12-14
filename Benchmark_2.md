@@ -130,7 +130,7 @@ While the generated application is usable as a prototype, significant additional
 - **Editability:** Task titles and descriptions cannot be edited after creation
 - **Configurability:** Columns are fixed and cannot be customized
 - **Advanced features:** No search, filtering, labels, due dates, or sub-tasks
-
+---
 Bringing the application to production quality would therefore require:
 
 - Adding a persistent backend
@@ -140,7 +140,7 @@ Bringing the application to production quality would therefore require:
 - Exposing configuration and management features
 
 As such, Lovable’s output should be considered a **high-fidelity prototype** rather than a deployable system.
-
+---
 ### 11. Summary and Interpretation
 
 This team benchmark demonstrates that Lovable can quickly generate a **visually convincing kanban board** that supports core interactions such as task creation, drag-and-drop workflow progression, commenting, and assignment.
