@@ -1,0 +1,189 @@
+#=============================================================================
+# system:   Lovable
+# author:   Jad Salameh
+# progress: OOO--
+#=============================================================================
+
+LovableTool
+  ' AI-assisted application builder (vibecoding tool).
+  ' [site](https://lovable.dev)
+  ' type: Natural language programming
+  ' target: rapid application prototyping
+  ' execution: fully managed runtime
+  ' development interface: prompt + visual canvas
+  ' storage: in-memory by default, optional cloud persistence
+  ' code access: optional GitHub synchronization
+  ' resource model: credit-based (opaque to user)
+  ' limitations:
+  '   - no explicit schema editor
+  '   - no direct control over relationships or constraints
+  '   - recursive structures constrained
+  '   - user entities implicit
+
+
+#------------------------------------------------------------------------------------
+#  Global concepts
+#------------------------------------------------------------------------------------
+
+User
+  ' Human user of the Lovable platform.
+  + projects: Project[*]
+
+
+Project
+  ' A project represents one application generated and managed by Lovable.
+  - name: String
+  - status: draft | generated | modified
+  - visibility: private | shared?
+  + prompts: Prompt[*]{ordered}
+  + application: Application
+  + repository: Repository[0..1]
+  + storage: Storage
+  - generate()
+  - update()
+
+
+#------------------------------------------------------------------------------------
+#  Application concepts
+#------------------------------------------------------------------------------------
+
+Application
+  ' The generated application as rendered in the visual canvas.
+  + entities: Entity[*]
+  + views: View[*]
+  + navigation: Navigation
+  + theme: Theme
+  + runtime: Runtime
+
+
+Entity
+  ' An inferred domain concept.
+  - name: String
+  + attributes: Attribute[*]
+  + relations: Relation[*]
+  - isFirstClass: Boolean
+  - supportsCRUD: Boolean
+
+
+Attribute
+  ' Property inferred for an entity.
+  - name: String
+  - type: String
+  - editable: Boolean
+
+
+Relation
+  ' Relationship inferred by the AI.
+  - source: Entity
+  - target: Entity
+  - kind: oneToMany | manyToMany | reflexive
+  - editable: false
+  - maxDepth: Integer?
+
+
+#------------------------------------------------------------------------------------
+#  Interaction and generation concepts
+#------------------------------------------------------------------------------------
+
+Prompt
+  ' Natural language instruction provided by the user.
+  - content: String
+  - timestamp: Date
+  - consumesCredits: Boolean
+
+
+Interaction
+  ' One AI generation cycle.
+  + prompt: Prompt
+  + delta: ApplicationDelta
+  + errors: Error[*]
+
+
+ApplicationDelta
+  ' Changes applied to the application state.
+  + addedEntities: Entity[*]
+  + modifiedViews: View[*]
+  + removedElements: Element[*]
+
+
+Error
+  - type: generationError | runtimeError
+  - description: String
+  - location: String?
+
+
+#------------------------------------------------------------------------------------
+#  User interface (tool-side)
+#------------------------------------------------------------------------------------
+
+LovableInterface
+  ' Main user-facing interface of the tool.
+  + promptPanel: PromptPanel
+  + canvas: ApplicationCanvas
+  + creditIndicator: CreditCounter
+  + statusIndicator: Status
+
+
+PromptPanel
+  ' Text input area for prompts.
+
+
+ApplicationCanvas
+  ' Visual representation of the generated application.
+  + views: View[*]
+  + modals: Modal[*]
+
+
+View
+  ' UI view inferred for the application.
+  - name: String
+  + components: Component[*]
+
+
+Modal
+  ' Dialog inferred for creation or editing.
+  - boundEntity: Entity?
+
+
+Component
+  - type: list | form | navigation | card
+  - editable: Boolean
+
+
+#------------------------------------------------------------------------------------
+#  Storage and execution
+#------------------------------------------------------------------------------------
+
+Storage
+  ' Abstract storage mechanism.
+  - mode: inMemory | cloud
+  - userVisible: false
+
+
+Runtime
+  ' Execution environment.
+  - managed: true
+
+
+#------------------------------------------------------------------------------------
+#  External integration
+#------------------------------------------------------------------------------------
+
+Repository
+  ' Optional external code repository.
+  - provider: GitHub
+  - url: URL
+  - syncMode: twoWay
+  - sourceOfTruth: GitHub | Lovable
+  ??? conflict resolution strategy?
+
+
+#------------------------------------------------------------------------------------
+#  Resource management
+#------------------------------------------------------------------------------------
+
+CreditCounter
+  ' Abstract resource accounting.
+  - remainingCredits: Integer
+  - resetPolicy: daily
+  - tokenVisibility: false
