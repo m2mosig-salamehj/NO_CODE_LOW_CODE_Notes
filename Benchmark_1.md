@@ -23,7 +23,13 @@ After a short generation phase, Lovable produced a fully functional **issue trac
 
 At this stage, Lovable already supports:
 
-- Creating, editing, and deleting issues
+- Creating issues
+
+![Global issues view showing multiple issues with status, priority, and assignees](images/img2.png)
+
+- editing, and deleting
+
+![Global issues view showing multiple issues with status, priority, and assignees](images/img3.png)
 
 - Assigning status and priority
 
@@ -41,13 +47,11 @@ The tool makes several **implicit assumptions**, notably that users already exis
 
 Lovable generates dedicated views for both **milestones** and **labels**, each with CRUD capabilities.
 
-📸 **Image 2 --- Milestones Page**\
-_(Insert screenshot showing milestones with progress bars and due dates)_
+![Milestones page with progress bars and due dates](images/img4.png)
 
 Milestones are not just static containers: Lovable automatically computes a completion percentage based on issue status. This indicates that the tool internally reasons about relationships between issues and milestones, even though this model is not explicitly exposed to the user.
 
-📸 **Image 3 --- Labels Page**\
-_(Insert screenshot showing label list with colors)_
+![Labels management page showing colored labels](images/img5.png)
 
 Labels are treated as reusable entities and can be attached to issues in a many-to-many fashion.
 
